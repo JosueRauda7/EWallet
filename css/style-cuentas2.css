@@ -11,14 +11,16 @@ body{
     background-size: cover;
 }
 
-
+#nuevo{
+    color: black;
+}
 
 
 form{
     font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans
     serif;
     width: 50%;
-    background: black;
+    background-color: black;
     color: white;
     font-size: 12px;
     background:black;
@@ -59,7 +61,7 @@ content: "";
   background: linear-gradient(to right, #111111, #444444, #b6b6b8, #444444, #111111);
   top: 0;
 }
-form h1 {
+h1 {
   font-size: 25px;
   text-shadow: 0 1px 0 black;
   text-align: center;
@@ -68,7 +70,23 @@ form h1 {
   position: relative;
 }
 
+#nuevo{
+    width: 80%;
+    text-align: center;
+    color: black;
+}
+#datos_efectivo{
+    margin-top: 450px;
+    width: 80%;
+    text-align: center;
+    color: black;
+}
 
+#nuevo2{
+    color: black;
+    width: 80%;
+    text-align: center;
+}
 /*RESPONSIVE*/
 @media screen and (max-width:1024px){
     
@@ -90,4 +108,12 @@ form h1 {
     background-repeat: no-repeat;
     background-size: cover;
 }
-    {}
+ h1 {
+  font-size: 25px;
+  text-shadow: 0 1px 0 black;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 3px solid white;
+  position: relative;
+}
+}
