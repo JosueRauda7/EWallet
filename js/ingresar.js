@@ -16,4 +16,6 @@ document.getElementById("guardar").onclick=function(){
     localStorage.setItem("bancoi",ss2);
     localStorage.setItem("cuentai",ss3);
     localStorage.setItem("saldoi",ss4);
+    
+
 }

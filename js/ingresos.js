@@ -16,7 +16,14 @@ document.getElementById("enviar_ingres").onclick=function(){
     localStorage.setItem("fecha", ss_1);
     localStorage.setItem("motivo",ss_2);
     localStorage.setItem("monto",ss_3);
-  
+    var ss_4=localStorage.saldoi-localStorage.monto;
+    localStorage.setItem("saldoi",ss_4);
+    
+document.getElementById("mostrar_inreso").innerHTML = "<br><br><br><h1>Ingreso</h1><br>";
+document.getElementById("mostrar_inreso").innerHTML += "<br><label>Fecha: </label><br>"+localStorage.fecha;
+document.getElementById("mostrar_inreso").innerHTML += "<br><label>Motivo: </label><br>"+localStorage.motivo;
+document.getElementById("mostrar_inreso").innerHTML += "<br><label>Monto: </label><br>"+localStorage.monto+"<br><br><br><br>";
+    
 }
     
 }
