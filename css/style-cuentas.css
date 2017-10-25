@@ -1,0 +1,234 @@
+body{
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans
+    serif;
+    color: white;
+    font-size: 12px;
+    background: #333;
+    background-image: url(../img/fondo3.jpg);
+	background-attachment: fixed;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.boton1{
+     padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    left: 5%;
+    font-size: 50px;
+    
+}
+
+.boton2{
+     padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    left: 8%;
+    font-size: 50px;
+    
+}
+
+.boton3{
+     padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    left: 10%;
+    font-size: 50px;
+    
+}
+.volver{
+      padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    top: 270px;
+    position: relative;
+    left: 42%;
+    font-size: 50px;
+}
+
+
+
+
+.#datos_c{
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans
+    serif;
+    width: 25%;
+    color: white;
+    font-size: 12px;
+    background:black;
+    border-radius: 20px;
+    position: relative;
+    top: 35px;
+    left: 36%
+}
+ 
+
+#datos_c:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 120px;
+  left: 20%;
+  background: linear-gradient(to right, #111111, #444444, #b6b6b8, #444444, #111111);
+  top: 0;
+}
+
+.#datos_c h1 {
+  font-size: 25px;
+  text-shadow: 0 1px 0 black;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 3px solid white;
+  position: relative;
+}
+
+#datos_c{
+    
+content: "";
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 120px;
+  left: 20%;
+  background: linear-gradient(to right, #111111, #444444, #b6b6b8, #444444, #111111);
+  top: 0;
+}
+#datos_c h1 {
+  font-size: 25px;
+  text-shadow: 0 1px 0 black;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 3px solid white;
+  position: relative;
+}
+
+
+/*RESPONSIVE*/
+@media screen and (max-width:1024px){
+    
+    .container {
+			width:100%;
+		}
+		section {
+			width:100%;
+		}
+
+    
+    body{
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans
+    serif;
+    color: white;
+    background-image: url(../img/fondo3.jpg);
+	background-attachment: fixed;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.boton1{
+     padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    left: 5%;
+    font-size: 70px;
+    
+}
+
+.boton2{
+     padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    left: 8%;
+    font-size: 70px;
+    
+}
+
+.boton3{
+     padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+    left: 5%;
+    font-size: 70px;
+    
+}
+.volver{
+      padding: 5px 20px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 10px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 0.3em;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    top: 420px;
+    position: relative;
+    left: 40%;
+    font-size: 50px;
+}
+    div{
+        padding: 10px;
+       position: relative;
+        left: 4%; 
+        background-color: rgba(232, 249, 249, 0.5);
+        width: 92%;
+        height: 280px;
+
+    }
+}
+
