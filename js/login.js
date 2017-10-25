@@ -1,3 +1,5 @@
+var contador;
+
 var a;//variable para nombre
 var b;//variable para apellidos
 var c;//variable para correo
@@ -14,30 +16,37 @@ var r;//variable de contraseña del login
 
 
 //objeto usuario
-var usuario = new Object();
+id=JSON.parse(localStorage.getItem('id'));
+contador=id;
+nombres=JSON.parse(localStorage.getItem('nombres'));
+apellidos=JSON.parse(localStorage.getItem('apellidos'));
+correo=JSON.parse(localStorage.getItem('correo'));
+contra=JSON.parse(localStorage.getItem('contra'));
+direct=JSON.parse(localStorage.getItem('direccion'));
+dui=JSON.parse(localStorage.getItem('dui'));
+nit=JSON.parse(localStorage.getItem('nit'));
+tele=JSON.parse(localStorage.getItem('telefono'));
+fechanacimiento=JSON.parse(localStorage.getItem('fechanacimiento'));
+preguntas=JSON.parse(localStorage.getItem('pregunta'));
+respuesta=JSON.parse(localStorage.getItem('respuesta'));
+estado=JSON.parse(localStorage.getItem('estado'));
+if(id===null || nombres===null || apellidos===null || contra===null || direct===null || dui===null || nit===null ||  tele===null || fechanacimiento===null || preguntas===null || respuesta===null || estado===null){
+	id=[];
+	nombres=[];
+	apellidos=[];
+	correo=[];
+	contra=[];
+	direct=[];
+	dui=[];
+	nit=[];
+	tele=[];
+	fechanacimiento=[];
+	preguntas=[];
+	respuesta=[];
+	var estado;
+}
 
-	//nombres del usuario
-	usuario.nombres=document.getElementById("nombres").value;
-	//apellidos del usuario
-	usuario.apellidos=document.getElementById("apellidos").value;
-	//correo del usuario
-	usuario.correo=document.getElementById("emailreg").value;
-	//contraseña del usuario
-	usuario.contra=document.getElementById("contrareg").value;
-	//direccion del usuario
-	usuario.direct=document.getElementById("direccion").value;
-	//DUI del usuario
-	usuario.dui=document.getElementById("dui").value;
-	//NIT del usuario
-	usuario.nit=document.getElementById("nit").value;
-	//telefono del usuario
-	usuario.tele=document.getElementById("telefono").value;
-	//fecha de nacimiento del usuario
-	usuario.fechanacimiento=document.getElementById("fechanac").value;
-	//Pregunta de recuperacion del usuario
-	usuario.preguntas=document.getElementById("pregunta").value;
-	//Respuesta de recuperacion del usuario
-	usuario.respuesta=document.getElementById("respuesta").value;
+
 
 
 function valnombres(){//funcion para validar nombres y apellidos
@@ -85,16 +94,38 @@ function valnit(){//funcion para validar NIT
 	}
 }
 function valdirect(){//funcion para validar direccion
-	var patron7=/^([A-Za-z]+[,]+){3}[0-9]{1}$/;//patron de direccion
+	var patron7=/^([A-Za-z]+[,]+){4}[0-9]{1}$/;//patron de direccion
 	if (!(patron7.test(e))) {//validacion para direccion
 		alert("Ingresar dirección con el formato: departamento, municipio, colonia, calle o pasaje, número de casa");
 	}
 }
 
+/*				LocalStorage				*/
 
+function guardar_objls(){
+	localStorage.setItem("id",JSON.stringify(id));
+	localStorage.setItem("nombres",JSON.stringify(nombres));
+	localStorage.setItem("apellidos",JSON.stringify(apellidos));
+	localStorage.setItem("correo",JSON.stringify(correo));
+	localStorage.setItem("contra",JSON.stringify(contra));
+	localStorage.setItem("direccion",JSON.stringify(direct));
+	localStorage.setItem("dui",JSON.stringify(dui));
+	localStorage.setItem("nit",JSON.stringify(nit));
+	localStorage.setItem("telefono",JSON.stringify(tele));
+	localStorage.setItem("fechanacimiento",JSON.stringify(fechanacimiento));
+	localStorage.setItem("pregunta",JSON.stringify(preguntas));
+	localStorage.setItem("respuesta",JSON.stringify(respuesta));
+	localStorage.setItem("estado",JSON.stringify(estado));
+}
 
 //evento que registra al usuario en el que valida sus datos y los guarda
 document.getElementById("registrar").onclick=function(){
+	if(contador==null){
+		contador=1;
+	}else{
+		contador=parseInt(id.length);
+		contador=contador+1;
+	}
 	a=document.getElementById("nombres").value;
 	b=document.getElementById("apellidos").value;
 	c=document.getElementById("emailreg").value;
@@ -104,17 +135,32 @@ document.getElementById("registrar").onclick=function(){
 	g=document.getElementById("nit").value;
 	h=document.getElementById("telefono").value;
 	i=document.getElementById("fechanac").value;
-	usuario.nombres=document.getElementById("nombres").value;
-	usuario.apellidos=document.getElementById("apellidos").value;
-	usuario.correo=document.getElementById("emailreg").value;
-	usuario.contra=document.getElementById("contrareg").value;
-	usuario.direct=document.getElementById("direccion").value;
-	usuario.dui=document.getElementById("dui").value;
-	usuario.nit=document.getElementById("nit").value;
-	usuario.tele=document.getElementById("telefono").value;
-	usuario.fechanacimiento=document.getElementById("fechanac").value;
-	usuario.preguntas=document.getElementById("pregunta").value;
-	usuario.respuesta=document.getElementById("respuesta").value;
+	//id
+	id.push(contador);
+	//nombres del usuario
+	nombres.push(document.getElementById("nombres").value);
+	//apellidos del usuario
+	apellidos.push(document.getElementById("apellidos").value);
+	//correo del usuario
+	correo.push(document.getElementById("emailreg").value);
+	//contraseña del usuario
+	contra.push(document.getElementById("contrareg").value);
+	//direccion del usuario
+	direct.push(document.getElementById("direccion").value);
+	//DUI del usuario
+	dui.push(document.getElementById("dui").value);
+	//NIT del usuario
+	nit.push(document.getElementById("nit").value);
+	//telefono del usuario
+	tele.push(document.getElementById("telefono").value);
+	//fecha de nacimiento del usuario
+	fechanacimiento.push(document.getElementById("fechanac").value);
+	//Pregunta de recuperacion del usuario
+	preguntas.push(document.getElementById("pregunta").value);
+	//Respuesta de recuperacion del usuario
+	respuesta.push(document.getElementById("respuesta").value);
+	//estado
+	estado=false;
 	valnombres();
 	valcorreo(c);
 	valcontra(d);
@@ -122,17 +168,26 @@ document.getElementById("registrar").onclick=function(){
 	valdui();
 	valnit();
 	valtel();
+	guardar_objls();
 }
 
 
 
 //evento para logearse en base al correo y contraseña
 document.getElementById("entrar").onclick=function(){
+
 	m=document.getElementById("email").value;
 	r=document.getElementById("contra").value;
 	valcorreo(m);
-	if((usuario.correo=m)&&(usuario.contra=r)){
-		location.href="menu.html"
+	id=JSON.parse(localStorage.getItem('id'));
+	for(u=0;u<((id.length));u++){
+	  if((m==correo[u])&&(r==contra[u])){
+		location.href="menu.html";
+          estado=true;
+		localStorage.setItem("estado",JSON.stringify(estado));
+		
+		break;
+	}
 	}
 }
 
@@ -141,15 +196,29 @@ document.getElementById("entrar").onclick=function(){
 //funcion para recuperacion de contraseña
 function valpregunta(){
 	var x;
+	var y;
+	var z;
+	id=JSON.parse(localStorage.getItem('id'));
+	y=document.getElementById("email").value;
 	x=document.getElementById("respu").value;
-	if(x=usuario.respuesta){
-		alert("Tu contraseña es: "+usuario.contra);
-		location.href="index.html"
+	for(u=0;u<((id.length));u++){
+	if((x==respuesta[u]) && (y==correo[u])){
+		alert("Tu contraseña es: "+contra[u]);
+		location.href="index.html";
+		break;
 	}
+}
 }
 
 
 //evento para recuperar contraseña en el login
 document.getElementById("olvidar").onclick=function(){
-	document.getElementById("seclogin").innerHTML="<h2>Iniciar Sesion</h2><label for='email'>Email:</label><br><br><input type='text' id='email' name='email'><br><br><label for='contra'>Contraseña:</label><br><br><input type='password' id='contra' name='contra'><br><br><button id='olvidar'>Olvide mi contraseña. Click aquí...</button><br><label for='respu'>"+usuario.preguntas+"</label><br><br><input type='text' id='respu' name='respu'><br><br><button id='listo' onClick='valpregunta()'>Listo</button><br>";
+	var y,z;
+	y=document.getElementById("email").value;
+for(u=0;u<((id.length));u++){
+	if(correo[u]===y){
+		z=preguntas[u];
+	}
+}
+	document.getElementById("seclogin").innerHTML="<h2>Iniciar Sesion</h2><label for='email'>Email:</label><br><br><input type='text' id='email' placeholder='Volver a ingresar correo' name='email'><br><br><label for='respu'>"+z+"</label><br><br><input type='text' id='respu' name='respu'><br><br><button id='listo' onClick='valpregunta()'>Listo</button><br>";
 }
